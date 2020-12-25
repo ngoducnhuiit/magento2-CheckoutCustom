@@ -11,40 +11,28 @@ $customFields = $block->getOrderCustomFields();
         </div>
         <div class="admin__page-section-content">
             <div class="order-information">
-               
+
                 <div class="box">
                     <strong class="box-title"><span><?php /* @escapeNotVerified */ echo __('Order Reference') ?></span></strong>
                     <div class="box-content">
                         <?php echo $this->escapeHtml($customFields->getCheckoutOrderReference()); ?>
                     </div>
                 </div>
-            
                 <div class="box">
                     <strong class="box-title"><span><?php /* @escapeNotVerified */ echo __('Delivery Date') ?></span></strong>
                     <div class="box-content">
                         <?php echo $this->escapeHtml($customFields->getCheckoutDate()); ?>
                     </div>
                 </div>
-              
-                <?php if (!empty($customFields->getCheckoutEmailCc())): ?>
-                <div class="box">
-                    <strong class="box-title"><span><?php /* @escapeNotVerified */ echo __('Email CC') ?></span></strong>
-                    <div class="box-content">
-                        <?php echo $this->escapeHtml($customFields->getCheckoutEmailCc()); ?>
-                    </div>
-                </div>
-                <?php endif;?>
             </div>
 
             <div class="order-information">
-              
                 <div class="box">
                     <strong class="box-title"><span><?php /* @escapeNotVerified */ echo __('Comment') ?></span></strong>
                     <div class="box-content">
                         <?php echo nl2br($this->escapeHtml($customFields->getCheckoutComment())); ?>
                     </div>
                 </div>
-               
             </div>
         </div>
     </section>

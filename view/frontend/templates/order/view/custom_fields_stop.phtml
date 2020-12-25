@@ -9,27 +9,18 @@ $customFields = $block->getCustomFields($block->getOrder());
         <div class="block-content">
             <div class="box">
                 <div class="box-content">
-                  
                     <strong><?php /* @escapeNotVerified */ echo __('Order Reference') ?>:</strong>
                     <?php echo $this->escapeHtml($customFields->getCheckoutOrderReference()); ?><br>
-                   
                     <strong><?php /* @escapeNotVerified */ echo __('Delivery Date') ?>:</strong>
                     <?php echo $this->escapeHtml($customFields->getCheckoutDate()); ?>
-                  
-                    <?php if (empty($customFields->getCheckoutEmailCc())): ?>
-                    <strong><?php /* @escapeNotVerified */ echo __('Email CC') ?>:</strong>
-                    <?php echo $this->escapeHtml($customFields->getCheckoutEmailCc()); ?>
-                    <?php endif;?>
                 </div>
             </div>
 
             <div class="box">
-               
                 <strong class="box-title"><span><?php /* @escapeNotVerified */ echo __('Comment') ?></span></strong>
                 <div class="box-content">
                     <?php echo nl2br($this->escapeHtml($customFields->getCheckoutComment())); ?>
                 </div>
-               
             </div>
         </div>
     </div>

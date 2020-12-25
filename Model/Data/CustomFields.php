@@ -7,17 +7,9 @@ use Magepow\CheckoutCustom\Api\Data\CustomFieldsInterface;
 
 class CustomFields extends AbstractExtensibleObject implements CustomFieldsInterface
 {
-    /**
-     * @var \Magento\Customer\Model\Session $customerSession
-     */
-    protected $customerSession;
-    public function __construct(
-    \Magento\Customer\Model\Session $customerSession
-    ) {
-        $this->customerSession = $customerSession;
-    }
 
-/**
+
+    /**
      * @return string|null
      */
     public function getCheckoutOrderReference()

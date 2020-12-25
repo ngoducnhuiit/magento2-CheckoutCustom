@@ -37,7 +37,6 @@ define([
 
             return this;
         },
-
         /**
          * Trigger save method if form is change
          */
@@ -68,7 +67,6 @@ define([
                     cartId: quoteId,
                     customFields: formData
                 };
-                console.log(payload);
                 var result = true;
                 $.ajax({
                     url: urlFormatter.build(url),
