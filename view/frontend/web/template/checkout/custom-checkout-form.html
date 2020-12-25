@@ -1,0 +1,9 @@
+<div class="custom-form-body" id="magepow-custom-form">
+    <form id="custom-checkout-form" class="form" data-bind="attr: {'data-hasrequired': $t('* Required Fields')}, event: {change: onFormChange()}">
+        <fieldset class="fieldset">
+            <!-- ko foreach: getRegion('custom-checkout-form-fields') -->
+            <!-- ko template: getTemplate() --><!-- /ko -->
+            <!--/ko-->
+        </fieldset>
+    </form>
+</div>

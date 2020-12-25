@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+/**
+ * di
+ *
+ * @copyright Copyright © 2020 Magepow. All rights reserved.
+ * @author    Magepow
+ * @category Magepow
+ * @copyright Copyright (c) 2014 Magepow (<https://www.magepow.com>)
+ * @license <https://www.magepow.com/license-agreement.html>
+ * @Author: magepow<support@magepow.com>
+ * @github: <https://github.com/magepow>
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <preference for="Magepow\CheckoutCustom\Api\Data\CustomFieldsInterface"
+                type="Magepow\CheckoutCustom\Model\Data\CustomFields" />
+
+    <preference for="Magepow\CheckoutCustom\Api\CustomFieldsRepositoryInterface"
+                type="Magepow\CheckoutCustom\Model\CustomFieldsRepository" />
+
+    <preference for="Magepow\CheckoutCustom\Api\CustomFieldsGuestRepositoryInterface"
+                type="Magepow\CheckoutCustom\Model\CustomFieldsGuestRepository" />
+
+    <preference for="Magento\Sales\Model\Order\Email\Container\OrderIdentity"
+                type="Magepow\CheckoutCustom\Plugin\Model\Order\Email\Container\OrderIdentity" />
+    <type name="Magento\Checkout\Block\Checkout\LayoutProcessor">
+        <plugin name="rewrite-checkout-fields" type="Magepow\CheckoutCustom\Plugin\Model\Checkout\LayoutProcessorPlugin" sortOrder="10"/>
+    </type>
+</config>

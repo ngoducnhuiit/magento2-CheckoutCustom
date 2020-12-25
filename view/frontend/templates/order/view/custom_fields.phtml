@@ -1,0 +1,37 @@
+<?php
+/** @var Magepow\CheckoutCustom\Block\Order\CustomFields $block */
+
+/** @var Magepow\CheckoutCustom\Model\Data\CustomFields $customFields */
+$customFields = $block->getCustomFields($block->getOrder());
+?>
+<?php if($customFields): ?>
+    <div class="block block-order-details-view">
+        <div class="block-content">
+            <div class="box">
+                <div class="box-content">
+                    <?php if (empty($customFields->getCheckoutOrderReference())): ?>
+                    <strong><?php /* @escapeNotVerified */ echo __('Order Reference') ?>:</strong>
+                    <?php echo $this->escapeHtml($customFields->getCheckoutOrderReference()); ?><br>
+                    <?php endif;?>
+                    <?php if (empty($customFields->getCheckoutDate())): ?>
+                    <strong><?php /* @escapeNotVerified */ echo __('Delivery Date') ?>:</strong>
+                    <?php echo $this->escapeHtml($customFields->getCheckoutDate()); ?>
+                    <?php endif;?>
+                    <?php if (empty($customFields->getCheckoutEmailCc())): ?>
+                    <strong><?php /* @escapeNotVerified */ echo __('Email CC') ?>:</strong>
+                    <?php echo $this->escapeHtml($customFields->getCheckoutEmailCc()); ?>
+                    <?php endif;?>
+                </div>
+            </div>
+
+            <div class="box">
+                <?php if (empty($customFields->getCheckoutComment())): ?>
+                <strong class="box-title"><span><?php /* @escapeNotVerified */ echo __('Comment') ?></span></strong>
+                <div class="box-content">
+                    <?php echo nl2br($this->escapeHtml($customFields->getCheckoutComment())); ?>
+                </div>
+                <?php endif;?>
+            </div>
+        </div>
+    </div>
+<?php endif; ?>
